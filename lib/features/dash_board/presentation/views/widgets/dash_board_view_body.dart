@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_dashboard/core/app_routes.dart';
+import 'package:fruits_dashboard/features/dash_board/presentation/views/widgets/custom_button.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DashBoardViewBody extends StatelessWidget {
@@ -11,23 +14,11 @@ class DashBoardViewBody extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: MaterialButton(
-            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 48),
-            onPressed: () {},
-            textColor: Colors.white,
-            color: Color(0xff1B5E37),
-            minWidth: double.infinity,
-            height: 54,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Text(
-              'Add Data',
-              style: GoogleFonts.cairo(
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
+          child: CustomButton(
+            title: 'Add Product',
+            onPressed: () {
+              GoRouter.of(context).push(AppRoutes.kAddProductView);
+            },
           ),
         ),
       ],

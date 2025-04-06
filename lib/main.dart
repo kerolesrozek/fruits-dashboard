@@ -15,6 +15,7 @@ class FruitsDashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      locale: const Locale('ar'),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRoutes.router,
     );
